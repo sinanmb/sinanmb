@@ -389,12 +389,12 @@ module.exports = function (grunt) {
         push: true,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
-      pages: {
-        options: {
-          remote: 'git@github.com:sinanmb/sinanmb.git',
-          branch: 'gh-pages'
-        }
-      },
+      //pages: {
+      //  options: {
+      //    remote: 'git@github.com:sinanmb/sinanmb.git',
+      //    branch: 'gh-pages'
+      //  }
+      //},
       heroku: {
         options: {
           remote: 'git@heroku.com:sinanmb.git',
