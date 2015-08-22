@@ -399,7 +399,7 @@ module.exports = function (grunt) {
         options: {
           remote: 'git@heroku.com:sinanmb.git',
           branch: 'master',
-          tag: 2
+          tag: false
         }
       },
       local: {
