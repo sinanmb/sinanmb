@@ -1,0 +1,64 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Github Branch Generator</h1>
+    <p class="lead"></p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form name="branch">
+        <div class="row">
+          <div class="col-md-3">
+            Branch Type:
+          </div>
+          <div class="col-md-9">
+            <ui-select ng-model="branch.type" theme="bootstrap" style="width: 300px;">
+              <ui-select-match>{{branch.type}}</ui-select-match>
+              <ui-select-choices repeat="branchType in branchTypes | filter: $select.search">
+                <span ng-bind-html="branchType | highlight: $select.search"></span>
+                <!--<small ng-bind-html="country.code | highlight: $select.search"></small>-->
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            Branch name:
+          </div>
+          <div class="col-md-3">
+            <input type="text"
+                   name="branchName"
+                   class="form-control input-md"
+                   ng-model="branch.name">
+          </div>
+        </div>
+      </form>
+
+      <div class="row boxed">
+        <div class="col-md-12">
+          git checkout -b {{branch.type}}/{{branch.name}} upstream/{{branchType}}{{branch.name}}
+        </div>
+        <div class="col-md-12">
+          git push origin {{branch.type}}/{{branch.name}}
+        </div>
+        <div class="col-md-12">
+          git branch --set-upstream-to origin {{branch.type}}/{{branch.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Angular Fullstack v2.0.13 |
+      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
+
+
