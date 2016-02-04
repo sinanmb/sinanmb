@@ -218,7 +218,7 @@ angular.module('sinanmbApp')
     };
 
     $scope.$watch('realties', function (newValue, oldValue) {
-      if (newValue && newValue != oldValue) {
+      if (newValue && newValue !== oldValue) {
         $scope.distributedRealties.men = $scope.distributedRealties.women = $scope.distributedRealties.undivided = [];
       }
     }, true);

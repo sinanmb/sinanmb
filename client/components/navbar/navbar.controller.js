@@ -17,6 +17,6 @@ angular.module('sinanmbApp')
 
     $scope.isActive = function (route) {
       // We need to check only the top lovel route because of nested routing
-      return "/"+$location.path().split("/")[1] === route;
+      return '/'+$location.path().split('/')[1] === route;
     };
   });
