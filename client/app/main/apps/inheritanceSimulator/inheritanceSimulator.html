@@ -3,20 +3,21 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Inheritance Simulator</h1>
+
     <p class="lead"></p>
   </div>
 </header>
 
 <div class="container">
   <div class="row">
-    <h3>Soulte maximale par personne en millions dh</h3>
+    <h3>Montant maximum à payer en cash (par personne en million dh)</h3>
     <input type="number" ng-model="maxSoulte" />
   </div>
 
   <!-- Show the realties and allow to edit their prices -->
   <div class="row">
     <div class="col-md-1"
-      ng-repeat="realty in realties">
+         ng-repeat="realty in realties">
       <h4>{{realty.name}}</h4>
       <input type="number" ng-model="realty.value"/>
     </div>
@@ -24,15 +25,15 @@
 
   <button type="button"
           class="btn btn-primary btn-block"
-    ng-click="calculate()">
+          ng-click="calculate()">
     Calculate
   </button>
 
   <!-- Show the people and their shares-->
   <div class="row">
     <div class="col-md-2"
-      ng-repeat="person in people">
-        {{person.name}}: {{person.parts}}
+         ng-repeat="person in people">
+      {{person.name}}: {{person.parts}}
     </div>
     <div class="col-md-2">
       Total: {{totalParts}}
@@ -40,33 +41,32 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
       <h4>Sinan, Anis</h4>
+
       <div ng-repeat="realty in distributedRealties.men.list">
         {{realty.name}}: {{realty.value}}
       </div>
+      <div>------</div>
+      <i>Soulte: {{distributedRealties.men.totalParts - distributedRealties.men.totalValue | number:2}}</i>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-4">
       <h4>Amina, Leila, Souad</h4>
+
       <div ng-repeat="realty in distributedRealties.women.list">
         {{realty.name}}: {{realty.value}}
       </div>
+      <div>------</div>
+      <i>Soulte: {{distributedRealties.women.totalParts - distributedRealties.women.totalValue | number:2}}</i>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-4">
       <h4>Undivided</h4>
+
       <div ng-repeat="realty in distributedRealties.undivided.list">
         {{realty.name}}: {{realty.value}}
       </div>
     </div>
   </div>
 </div>
-
-<footer class="footer">
-  <div class="container">
-    <p>Angular Fullstack v2.0.13 |
-      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
 
 

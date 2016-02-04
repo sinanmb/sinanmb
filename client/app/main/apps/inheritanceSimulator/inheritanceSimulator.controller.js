@@ -192,6 +192,9 @@ angular.module('sinanmbApp')
         }
       }
 
+      distributedRealties.men.totalParts = $scope.people[0].parts + $scope.people[1].parts;
+      distributedRealties.women.totalParts = $scope.people[2].parts + $scope.people[3].parts + $scope.people[3].parts;
+
       console.log ('distributedRealties: ', distributedRealties);
       $scope.distributedRealties = distributedRealties;
     }
