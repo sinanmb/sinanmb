@@ -91,7 +91,7 @@ angular.module('sinanmbApp')
       var k, l = null;
       for (var i = 0, j = $scope.realties.length; i < j; i++) {
         // Custom repartition for Ronzade
-        if ($scope.realties[i].id === 0) {
+        if ($scope.realties[i].id === 2) {
           for (k = 0, l = $scope.people.length; k < l; k++) {
             switch ($scope.people[k].id) {
               case 0: // Sinan
